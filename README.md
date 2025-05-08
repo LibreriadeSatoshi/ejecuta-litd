@@ -10,11 +10,11 @@ Puede ver un video de demostración de estos scripts [aquí](https://youtu.be/lo
 
 ## Contenido
 
-1. [Instrucciones](https://github.com/HannahMR/run-litd/#instructiones)
-2. [Requisitos del Servidor](https://github.com/HannahMR/run-litd/#Requisitos-del-Servidor)
-3. [Preparación del Servidor](https://github.com/HannahMR/run-litd/#Preparación-del-Servidor)
-4. [Configuración de Bitcoind](https://github.com/HannahMR/run-litd/#Configuración-de-Bitcoind)
-5. [Configuración de Litd](https://github.com/HannahMR/run-litd/#Configuración-de-Litd)
+1. [Instrucciones](https://github.com/Foxtrot-Zulu/run-litd/#instructiones)
+2. [Requisitos del Servidor](https://github.com/Foxtrot-Zulu/run-litd/#Requisitos-del-Servidor)
+3. [Preparación del Servidor](https://github.com/Foxtrot-Zulu/run-litd/#Preparación-del-Servidor)
+4. [Configuración de Bitcoind](https://github.com/Foxtrot-Zulu/run-litd/#Configuración-de-Bitcoind)
+5. [Configuración de Litd](https://github.com/Foxtrot-Zulu/run-litd/#Configuración-de-Litd)
 
 ## Instrucciones
 
