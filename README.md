@@ -2,17 +2,19 @@
 
 Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
+#### Fork del trabajo realizado por [@HannahMR](https://github.com/HannahMR/run-litd)
+
 ¡Importante!: Estos ejemplos y scripts están diseñados para ayudar a los desarrolladores a configurarse rápidamente para comenzar las pruebas y el desarrollo de aplicaciones. Por favor, no confíe en estos archivos en su construcción de producción.
 
 Puede ver un video de demostración de estos scripts [aquí](https://youtu.be/lopHP_nF0tE)
 
 ## Contenido
 
-1. [Instrucciones](https://github.com/HannahMR/run-litd/#instructions)
-2. [Requisitos del Servidor](https://github.com/HannahMR/run-litd/#server-requirements)
-3. [Preparación del Servidor](https://github.com/HannahMR/run-litd/#server-prep)
-4. [Configuración de Bitcoind](https://github.com/HannahMR/run-litd/#bitcoind-setup)
-5. [Configuración de Litd](https://github.com/HannahMR/run-litd/#litd-setup)
+1. [Instrucciones](https://github.com/HannahMR/run-litd/#instructiones)
+2. [Requisitos del Servidor](https://github.com/HannahMR/run-litd/#Requisitos-del-Servidor)
+3. [Preparación del Servidor](https://github.com/HannahMR/run-litd/#Preparación-del-Servidor)
+4. [Configuración de Bitcoind](https://github.com/HannahMR/run-litd/#Configuración-de-Bitcoind)
+5. [Configuración de Litd](https://github.com/HannahMR/run-litd/#Configuración-de-Litd)
 
 ## Instrucciones
 
@@ -22,7 +24,7 @@ Este repositorio se inspira en el repositorio [RUN LND](https://github.com/alexb
 
 Las versiones actuales de estas listas de verificación y scripts instalan...
 
-- bitcoind v27.2
+- bitcoind v29.0
 - litd v0.14.0-alpha
 
 ## Requisitos del Servidor
@@ -47,7 +49,7 @@ Al ejecutar un nodo podado, la siguiente línea debe estar descomentada en el ar
 
 Este paso prepara el servidor. Se crea un nuevo usuario de Ubuntu con acceso sudo. Se agregan claves SSH. La seguridad se refuerza deshabilitando el inicio de sesión de root y la autenticación por contraseña. Después de ejecutarlo, deberá iniciar sesión en el servidor como el usuario de Ubuntu a través de SSH.
 
-Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra en [/checklists/server-setup-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/server-setup-checklist.txt) o ejecutando el script bash de configuración en [/scripts/server_setup.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/server_setup.sh)
+Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra en [/checklists/server-setup-checklist.txt](https://github.com/Foxtrot-Zulu/run-litd/blob/main/checklists/server-setup-checklist.txt) o ejecutando el script bash de configuración en [/scripts/server_setup.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/server_setup.sh)
 
 ### Script de Ayuda para la Preparación del Servidor
 
@@ -72,7 +74,7 @@ Este paso instala y ejecuta bitcoind. El servidor se actualiza, se instalan las 
 
 A medida que se ejecutan los scripts, se le pedirá que seleccione la red: signet o mainnet.
 
-Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra aquí [/checklists/bitcoind-setup-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/bitcoind-setup-checklist.txt) y aquí [/checklists/bitcoind-setup-binary-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/bitcoind-setup-binary-checklist.txt) o ejecutando uno de los scripts bash de configuración aquí [/scripts/bitcoind_setup.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/bitcoind_setup.sh) o aquí [/scripts/bitcoind_setup_binary.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/bitcoind_setup_binary.sh)
+Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra aquí [/checklists/bitcoind-setup-checklist.txt](https://github.com/Foxtrot-Zulu/run-litd/blob/main/checklists/bitcoind-setup-checklist.txt) y aquí [/checklists/bitcoind-setup-binary-checklist.txt](https://github.com/Foxtrot-Zulu/run-litd/blob/main/checklists/bitcoind-setup-binary-checklist.txt) o ejecutando uno de los scripts bash de configuración aquí [/scripts/bitcoind_setup.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/bitcoind_setup.sh) o aquí [/scripts/bitcoind_setup_binary.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/bitcoind_setup_binary.sh)
 
 ### Script de Ayuda para la Configuración de Bitcoind
 
@@ -100,11 +102,11 @@ El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, 
 
 Este paso instala y ejecuta litd. Al instalar desde la fuente, se instalan GoLang y NodeJS, se clona el repositorio y se compila litd. Al instalar desde el binario, se descargan los archivos apropiados, se genera un archivo lit.conf, se crea una billetera LND, se guarda la contraseña y se configura para desbloquearse automáticamente al inicio, se crea un archivo .service de systemd y se inicia litd.
 
-La instalación de Litd se ve facilitada con este repositorio de varias maneras. Puede continuar con cualquiera de las opciones de configuración, la lista de verificación de instalación desde la fuente está aquí [/checklists/litd-setup-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/litd-setup-checklist.txt) y la lista de verificación de instalación desde el binario está aquí [/checklists/litd-setup-binary-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/litd-setup-binary-checklist.txt)
+La instalación de Litd se ve facilitada con este repositorio de varias maneras. Puede continuar con cualquiera de las opciones de configuración, la lista de verificación de instalación desde la fuente está aquí [/checklists/litd-setup-checklist.txt](https://github.com/Foxtrot-Zulu/run-litd/blob/main/checklists/litd-setup-checklist.txt) y la lista de verificación de instalación desde el binario está aquí [/checklists/litd-setup-binary-checklist.txt](https://github.com/Foxtrot-Zulu/run-litd/blob/main/checklists/litd-setup-binary-checklist.txt)
 
-También se pueden utilizar los scripts bash para instalar desde la fuente o desde el binario. Para instalar desde la fuente, ejecute los scripts bash de configuración en [/scripts/litd_setup.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup.sh), [/scripts/litd_setup2.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup2.sh) y [/scripts/litd_setup3.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup3.sh)
+También se pueden utilizar los scripts bash para instalar desde la fuente o desde el binario. Para instalar desde la fuente, ejecute los scripts bash de configuración en [/scripts/litd_setup.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/litd_setup.sh), [/scripts/litd_setup2.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/litd_setup2.sh) y [/scripts/litd_setup3.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/litd_setup3.sh)
 
-Para instalar un binario, ejecute los scripts bash de configuración en [/scripts/litd_setup_binary.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup_binary.sh) y [/scripts/litd_setup3.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup3.sh)
+Para instalar un binario, ejecute los scripts bash de configuración en [/scripts/litd_setup_binary.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/litd_setup_binary.sh) y [/scripts/litd_setup3.sh](https://github.com/Foxtrot-Zulu/run-litd/blob/main/scripts/litd_setup3.sh)
 
 ### Script de Ayuda para la Configuración de Litd
 
