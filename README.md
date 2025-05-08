@@ -6,11 +6,11 @@ Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
 ¡Importante!: Estos ejemplos y scripts están diseñados para ayudar a los desarrolladores a configurarse rápidamente para comenzar las pruebas y el desarrollo de aplicaciones. Por favor, no confíe en estos archivos en su construcción de producción.
 
-Puede ver un video de demostración de estos scripts [aquí](https://youtu.be/lopHP_nF0tE)
+Puede ver un video de demostración de estos scripts [aquí]
 
 ## Contenido
 
-1. [Instrucciones](https://github.com/Foxtrot-Zulu/run-litd/#instructiones)
+1. [Instrucciones](https://github.com/Foxtrot-Zulu/run-litd/#instrucciones)
 2. [Requisitos del Servidor](https://github.com/Foxtrot-Zulu/run-litd/#Requisitos-del-Servidor)
 3. [Preparación del Servidor](https://github.com/Foxtrot-Zulu/run-litd/#Preparación-del-Servidor)
 4. [Configuración de Bitcoind](https://github.com/Foxtrot-Zulu/run-litd/#Configuración-de-Bitcoind)
