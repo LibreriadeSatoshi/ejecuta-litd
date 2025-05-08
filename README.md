@@ -1,135 +1,130 @@
-# Run Litd
+# Ejecutar Litd
 
-Notes and helper scripts for setting up and running a Litd node.
+Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
-Important!: These examples and scripts are designed to help developers get set up quickly to begin testing and application development. Please do not trust these files on your production build.  
+Fork del trabajo realizado por [@HannahMR](https://github.com/HannahMR/run-litd)
 
-You can view a demo video of these scripts [here](https://youtu.be/lopHP_nF0tE)
+¡Importante!: Estos ejemplos y scripts están diseñados para ayudar a los desarrolladores a configurarse rápidamente para comenzar las pruebas y el desarrollo de aplicaciones. Por favor, no confíe en estos archivos en su construcción de producción.
 
-## Contents
+Puede ver un video de demostración de estos scripts [aquí]
 
-1. [Instructions](https://github.com/HannahMR/run-litd/#instructions)
-2. [Server Requirements](https://github.com/HannahMR/run-litd/#server-requirements)
-3. [Server Prep](https://github.com/HannahMR/run-litd/#server-prep) 
-4. [Bitcoind Setup](https://github.com/HannahMR/run-litd/#bitcoind-setup)
-5. [Litd Setup](https://github.com/HannahMR/run-litd/#litd-setup)
+## Contenido
 
+1. [Instrucciones](https://github.com/Foxtrot-Zulu/ejecuta-litd/#instrucciones)
+2. [Requisitos del Servidor](https://github.com/Foxtrot-Zulu/ejecuta-litd/#Requisitos-del-Servidor)
+3. [Preparación del Servidor](https://github.com/Foxtrot-Zulu/ejecuta-litd/#Preparación-del-Servidor)
+4. [Configuración de Bitcoind](https://github.com/Foxtrot-Zulu/ejecuta-litd/#Configuración-de-Bitcoind)
+5. [Configuración de Litd](https://github.com/Foxtrot-Zulu/ejecuta-litd/#Configuración-de-Litd)
 
+## Instrucciones
 
-## Instructions
+Esta guía contiene listas de verificación, archivos de ejemplo y scripts de ayuda para poner en funcionamiento un nodo Litd en un servidor Ubuntu. Estos scripts se han probado en Ubuntu 24.04. Hay tres secciones principales en la guía: preparación del servidor, configuración de bitcoind y configuración de litd. En cada una de estas secciones encontrará una descripción de lo que debe suceder, una lista de verificación a seguir, enlaces a archivos de ejemplo y, si lo prefiere, scripts bash que ejecutarán las listas de verificación por usted.
 
-This guide contains checklists, example files, and helper scripts for getting a Litd node up and running on a ubuntu server. These scripts have been tested on Ubuntu 24.04. There are three major sections to the guide, server prep, bitcoind setup, and litd setup. In each of these sections you will find a description of what needs to happen, a check list to follow, links to example files, and, if you prefer, bash scripts that will run through the checklists for you! 
+Este repositorio se inspira en el repositorio [RUN LND](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
 
-This repo takes inspiration from the [RUN LND](https://github.com/alexbosworth/run-lnd/) repo. There you can find more detailed information on configuring a Lightning node. 
+Las versiones actuales de estas listas de verificación y scripts instalan...
 
-The current verions of these checklists and scripts installs...
-
-- bitcoind v27.2
+- bitcoind v29.0
 - litd v0.14.0-alpha
 
-## Server Requirements
+## Requisitos del Servidor
 
-This setup is well tested on Ubuntu servers with at least the below level of resources:
+Esta configuración está bien testeada en servidores Ubuntu con al menos este nivel de recursos:
 
-- 2+ CPU Cores
-- 80GB+ Storage
-- 4GB+ RAM
+- 2+ Núcleos de CPU
+- 80GB+ de Almacenamiento
+- 4GB+ de RAM
 
-You will need to increase these resources when running a production server or when running a full node. 
+Deberá aumentar estos recursos cuando ejecute un servidor de producción o cuando ejecute un nodo completo.
 
-When running a full node on mainnet the server should have at least 800GB. It is common to use an attached disk for the full Blockchain. When doing that you'll need to mount the disk and then add a line to your bitcoin.conf file. 
+Al ejecutar un nodo completo en mainnet, el servidor debe tener al menos 800 GB. Es común utilizar un disco extra para toda la Blockchain. Cuando haga eso, deberá montar el disco y luego agregar una línea a su archivo bitcoin.conf.
 
-```datadir=/path/to/the/storage/directory```
+```datadir=/ruta/al/directorio/de/almacenamiento```
 
-When running a pruned node the below line should be uncommented in the bitcoin.conf file. 
+Al ejecutar un nodo podado, la siguiente línea debe estar descomentada en el archivo bitcoin.conf.
 
-```prune=50000 # Prune to 50GB``` 
+```prune=50000 # Podar a 50GB```
 
+## Preparación del Servidor
 
-## Server Prep
+Este paso prepara el servidor. Se crea un nuevo usuario de Ubuntu con acceso sudo. Se agregan claves SSH. La seguridad se refuerza deshabilitando el inicio de sesión de root y la autenticación por contraseña. Después de ejecutarlo, deberá iniciar sesión en el servidor como el usuario de Ubuntu a través de SSH.
 
-This step prepares the server. A new ubuntu user with sudo access is created. SSH keys are added. security is tightened by disabling root login and password authentication. After you run it you'll need to log into the server as the Ubuntu user via SSH. 
+Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra en [/checklists/server-setup-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/server-setup-checklist.txt) o ejecutando el script bash de configuración en [/scripts/server_setup.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/server_setup.sh)
 
-This step can be done by following along with the checklist file found at [/checklists/server-setup-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/server-setup-checklist.txt) or by running the setup bash script at [/scripts/server_setup.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/server_setup.sh) 
+### Script de Ayuda para la Preparación del Servidor
 
-### Server Prep Helper Script
+Se le pedirá que pegue las claves SSH de su equipo a medida que se ejecuta el script.
 
-You will be propted to paste in your team's ssh keys as the script runs.   
+No olvide hacerlo ejecutable antes de intentar ejecutarlo.
 
-Don't forget to make executable before trying to run it. 
+```$ chmod +x server_setup.sh```
 
-```$ chmod +x server_setup.sh``` 
-
-The script should be run with sudo. Don't worry, repo's, files, etc. will be owned by your current user(a new user called ubuntu if the server_setup script was used).
+El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual (un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./server_setup.sh```
 
-You'll like want to move the run-litd repo to the new ubuntu users home directory. 
+Es posible que desee mover el repositorio run-litd al directorio de inicio del nuevo usuario de Ubuntu y le transfiera la propiedad.
 
 ```$ sudo mv /root/run-litd/ /home/ubuntu/run-litd/```
 ```$ sudo mv chown -R ubuntu:ubuntu /home/ubuntu/run-litd/```
 
-## Bitcoind Setup
+## Configuración de Bitcoind
 
-This step installs and runs bitcoind. The server is brought up to date, bitcoind dependancies are installed, bitcoind is built or the binary downloaded, a config file is created, a systemd .service file is created and bitcoind is run. There are two scripts and checklists here. One for building from source, and one for downloading a binary. 
+Este paso instala y ejecuta bitcoind. El servidor se actualiza, se instalan las dependencias de bitcoind, se compila bitcoind o se descarga el binario, se crea un archivo de configuración, se crea un archivo .service de systemd y se ejecuta bitcoind. Aquí hay dos scripts y listas de verificación. Uno para compilar desde la fuente y otro para descargar un binario.
 
-As the scripts run you will be prompted to select signet or mainnet. 
+A medida que se ejecutan los scripts, se le pedirá que seleccione la red: signet o mainnet.
 
-This step can be done by following along with the checklist file found here [/checklists/bitcoind-setup-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/bitcoind-setup-checklist.txt) and here [/checklists/bitcoind-setup-binary-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/bitcoind-setup-binary-checklist.txt) or by running one of the setup bash scripts here [/scripts/bitcoind_setup.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/bitcoind_setup.sh) or here [/scripts/bitcoind_setup_binary.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/bitcoind_setup_binary.sh) 
+Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra aquí [/checklists/bitcoind-setup-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/bitcoind-setup-checklist.txt) y aquí [/checklists/bitcoind-setup-binary-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/bitcoind-setup-binary-checklist.txt) o ejecutando uno de los scripts bash de configuración aquí [/scripts/bitcoind_setup.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/bitcoind_setup.sh) o aquí [/scripts/bitcoind_setup_binary.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/bitcoind_setup_binary.sh)
 
-### Bitcoind Setup Helper Script
+### Script de Ayuda para la Configuración de Bitcoind
 
-Please double check the default values included in the config file in the scripts before running one of the scripts. Values such as network, passwords, etc will be selected/generated when the scripts run. 
+Por favor, revise los valores predeterminados incluidos en el archivo de configuración de los scripts antes de ejecutar uno de los scripts. Los valores como la red, las contraseñas, etc. se seleccionarán/generarán cuando se ejecuten los scripts.
 
-There are two scripts to chose from here, one which installs from source, bitcoind_setup.sh, and one which installs a binary, bitcoind_setup_binary.sh. Which ever script you chose you will want to run it as the new users that was created in the server setup process.
+Aquí hay dos scripts para elegir, uno que instala desde la fuente, bitcoind_setup.sh, y otro que instala un binario, bitcoind_setup_binary.sh. Cualquiera que sea el script que elija, querrá ejecutarlo como el nuevo usuario que se creó en el proceso de configuración del servidor.
 
-These scripts default to running a pruned node set to 50GB. If you would like to run a full node or store the blockchain data on an attached disk, you will need to edit the script accordingly. 
+Estos scripts ejecutan de forma predeterminada un nodo podado, configurado en 50 GB. Si desea ejecutar un nodo completo o almacenar los datos de la cadena de bloques en un disco adjunto, deberá editar el script en consecuencia.
 
-They also run checks to see what's been done as they go, and so should be safe to run multiple times in case any run has been interupted. 
+También ejecutan comprobaciones para ver lo que se ha hecho a medida que avanzan, por lo que deberían ser seguros para ejecutar varias veces en caso de que alguna ejecución se haya interrumpido.
 
-If you originally cloned this repo to /root you may want to move it to /home/ubuntu and change the owner for easier running. 
+Si originalmente clonó este repositorio en /root, es posible que desee moverlo a /home/ubuntu y cambiar el propietario para facilitar la ejecución.
 
-Don't forget to make the scripts executable before trying to run them. 
+No olvide hacer que los scripts sean ejecutables antes de intentar ejecutarlos.
 
-```$ chmod +x bitcoind_setup.sh``` 
-```$ chmod +x bitcoind_setup_binary.sh``` 
+```$ chmod +x bitcoind_setup.sh```
+```$ chmod +x bitcoind_setup_binary.sh```
 
-The script should be run with sudo. Don't worry, repo's, files, etc. will be owned by your current user, a new user called ubuntu if the server_setup script was used).
+El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./bitcoind_setup.sh```
-```$ sudo ./bitcoind_setup_binary.sh``` 
+```$ sudo ./bitcoind_setup_binary.sh```
 
+## Configuración de Litd
 
+Este paso instala y ejecuta litd. Al instalar desde la fuente, se instalan GoLang y NodeJS, se clona el repositorio y se compila litd. Al instalar desde el binario, se descargan los archivos apropiados, se genera un archivo lit.conf, se crea una billetera LND, se guarda la contraseña y se configura para desbloquearse automáticamente al inicio, se crea un archivo .service de systemd y se inicia litd.
 
-## Litd Setup
+La instalación de Litd se ve facilitada con este repositorio de varias maneras. Puede continuar con cualquiera de las opciones de configuración, la lista de verificación de instalación desde la fuente está aquí [/checklists/litd-setup-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/litd-setup-checklist.txt) y la lista de verificación de instalación desde el binario está aquí [/checklists/litd-setup-binary-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/litd-setup-binary-checklist.txt)
 
-This step installs and runs litd. When installing from source GoLang and NodeJS are installed, the repo is cloned and litd is built. When installing from binary the appropriate files are downloaded, a lit.conf file is generated, an LND wallet is created, the password saved, and the config set to auto unlock at startup, a systemd .service file is created, and litd is started!
+También se pueden utilizar los scripts bash para instalar desde la fuente o desde el binario. Para instalar desde la fuente, ejecute los scripts bash de configuración en [/scripts/litd_setup.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/litd_setup.sh), [/scripts/litd_setup2.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/litd_setup2.sh) y [/scripts/litd_setup3.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/litd_setup3.sh)
 
-Litd installation is helped with this repo in a number of ways. You can follow along with the setup  checklist files, the install from source checklist is here [/checklists/litd-setup-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/litd-setup-checklist.txt) and the install from binary checklist is here [/checklists/litd-setup-binary-checklist.txt](https://github.com/HannahMR/run-litd/blob/main/checklists/litd-setup-binary-checklist.txt)
+Para instalar un binario, ejecute los scripts bash de configuración en [/scripts/litd_setup_binary.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/litd_setup_binary.sh) y [/scripts/litd_setup3.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/litd_setup3.sh)
 
-Bash scripts can also be used to install either from source or from binary. To install from source run the setup bash scripts at [/scripts/litd_setup.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup.sh), [/scripts/litd_setup2.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup2.sh) and [/scripts/litd_setup3.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup3.sh)
+### Script de Ayuda para la Configuración de Litd
 
-To install a binary run the setup bash scripts at [/scripts/litd_setup_binary.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup_binary.sh) and [/scripts/litd_setup3.sh](https://github.com/HannahMR/run-litd/blob/main/scripts/litd_setup3.sh)
+Estos scripts ejecutan comprobaciones para ver lo que se ha hecho a medida que avanzan, por lo que deberían ser seguros para ejecutar varias veces en caso de que alguna ejecución se haya interrumpido.
 
-### Litd Setup Helper Script
+Si está instalando desde la fuente, hay tres scripts para ejecutar aquí: litd_setup.sh, litd_setup2.sh y luego litd_setup3.sh. Deberá ejecutar el primer script y luego finalizar la sesión bash actual e iniciar una nueva antes de ejecutar el segundo. Deberá seguir el proceso de creación de la billetera después de ejecutar el script dos y antes del script tres.
 
-These scripts run checks to see what's been done as they go, and so should be safe to run multiple times in case any run has been interupted. 
+Si está instalando el binario, hay dos scripts para ejecutar aquí: litd_setup_binary.sh y litd_setup3.sh. Después de ejecutar el script litd_setup_binary.sh, deberá seguir el proceso de creación de la billetera antes de ejecutar litd_setup3.sh.
 
-If you are installing from source there are three scripts to be run here, litd_setup.sh, litd_setup2.sh and then litd_setup3.sh. You'll need to run the first script and then end the current bash session and start a new one before running the second. You will need to walk through the wallet creation process after running script two and before script three.
-
-If you are installing the binary there are two script to be run here, litd_setup_binary.sh and litd_setup3.sh. After running the litd_setup_binary.sh script you will need to walk through the wallet creation process before running litd_setup3.sh.
-
-Don't forget to make them executable before trying to run them.
+No olvide hacerlos ejecutables antes de intentar ejecutarlos.
 
 ```$ chmod +x litd_setup*```
 
-The scripts should be run with sudo. Don't worry, repo's, files, etc. will be owned by your current user, a new user called ubuntu if the server_setup script was used).
+Los scripts deben ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./litd_setup.sh```
 ```$ sudo ./litd_setup_binary.sh```
-```$ sudo ./litd_setup2.sh``` 
+```$ sudo ./litd_setup2.sh```
 ```$ sudo ./litd_setup3.sh```
 
-Happy Building! 
-
-
+Ahora a desarrollar! 
