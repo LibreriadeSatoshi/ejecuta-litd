@@ -2,7 +2,7 @@
 
 Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
-#### Fork del trabajo realizado por [@HannahMR](https://github.com/HannahMR/run-litd)
+Fork del trabajo realizado por [@HannahMR](https://github.com/HannahMR/run-litd)
 
 ¡Importante!: Estos ejemplos y scripts están diseñados para ayudar a los desarrolladores a configurarse rápidamente para comenzar las pruebas y el desarrollo de aplicaciones. Por favor, no confíe en estos archivos en su construcción de producción.
 
