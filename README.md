@@ -1,4 +1,6 @@
-# Ejecutar Litd
+# Ejecuta Litd
+
+![Alt text](litd.png "Ejecuta Litd")
 
 Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
@@ -93,10 +95,10 @@ Toda la línea completa que se muestra es lo que se debe copiar. Ej:
 
 ```ssh-ed25519 AAA1lZDI1NTEAAAIHOO7upjhjrW0a3obS47upjhjrW0a/LB usuario@mail.com```
 
-Es posible que desee mover el repositorio run-litd al directorio de inicio del nuevo usuario de Ubuntu y le transfiera la propiedad.
+Si originalmente clonó el repositorio con el usuario root, es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y le transfiera la propiedad.
 
-```$ sudo mv /root/run-litd/ /home/ubuntu/run-litd/```
-```$ sudo mv chown -R ubuntu:ubuntu /home/ubuntu/run-litd/```
+```$ sudo mv /root/ejecuta-litd/ /home/ubuntu/ejecuta-litd/```
+```$ sudo mv chown -R ubuntu:ubuntu /home/ubuntu/ejecuta-litd/```
 
 ## Configuración de Bitcoind
 
