@@ -22,7 +22,7 @@ Puede ver un video en inglés de demostración de estos scripts [aquí](https://
 
 Esta guía contiene listas de verificación, archivos de ejemplo y scripts de ayuda para poner en funcionamiento un nodo Litd en un servidor Ubuntu. Estos scripts se han probado en Ubuntu 24.04. Hay tres secciones principales en la guía: preparación del servidor, configuración de bitcoind y configuración de litd. En cada una de estas secciones encontrará una descripción de lo que debe suceder, una lista de verificación a seguir, enlaces a archivos de ejemplo y, si lo prefiere, scripts bash que ejecutarán las listas de verificación por usted.
 
-Este repositorio se inspira en el repositorio [run-lnd](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
+Este repositorio se inspira en el repositorio [run lnd](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
 
 Las versiones actuales de estas listas de verificación y scripts instalan...
 
@@ -49,7 +49,7 @@ Para tener acceso a los scripts de bash y demás archivos, puede clonar este rep
 
 Este paso prepara el servidor. Se crea un nuevo usuario de Ubuntu con acceso sudo. Se agregan claves SSH. La seguridad se refuerza deshabilitando el inicio de sesión de root y la autenticación por contraseña. Después de ejecutarlo, deberá iniciar sesión en el servidor como el usuario de Ubuntu a través de SSH.
 
-Este paso se puede realizar siguiendo el archivo de la lista de verificación que se encuentra en [/checklists/server-setup-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/server-setup-checklist.txt) o ejecutando el script bash de configuración automática en [/scripts/server_setup.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/server_setup.sh)
+Este paso se puede realizar de forma manual siguiendo el archivo de la lista de verificación que se encuentra en [/checklists/server-setup-checklist.txt](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/checklists/server-setup-checklist.txt) o ejecutando el script bash de configuración automática en [/scripts/server_setup.sh](https://github.com/Foxtrot-Zulu/ejecuta-litd/blob/main/scripts/server_setup.sh)
 
 ### Script de Ayuda para la Preparación del Servidor
 
@@ -91,11 +91,12 @@ Luego debe copiar la clave ssh y pegarla en la terminal donde está ejecutando e
 
 ```$ cat id_ed25519.pub```
 
-Toda la línea completa que se muestra es lo que se debe copiar. Ej: 
+
+Toda la línea completa que se muestra es lo que se debe copiar y pegar en el servidor. Ej: 
 
 ```ssh-ed25519 AAA1lZDI1NTEAAAIHOO7upjhjrW0a3obS47upjhjrW0a/LB usuario@mail.com```
 
-Si originalmente clonó el repositorio con el usuario root, es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y le transfiera la propiedad.
+Si originalmente clonó el repositorio con el usuario root, es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y luego transferir la propiedad.
 
 ```$ sudo mv /root/ejecuta-litd/ /home/ubuntu/ejecuta-litd/```
 
@@ -174,3 +175,4 @@ Los scripts deben ejecutarse con sudo. No se preocupe, los repositorios, archivo
 ```$ sudo ./litd_setup3.sh```
 
 Ahora a desarrollar! 
+
