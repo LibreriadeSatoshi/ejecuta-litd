@@ -22,7 +22,7 @@ Puede ver un video en inglés de demostración de estos scripts [aquí](https://
 
 Esta guía contiene listas de verificación, archivos de ejemplo y scripts de ayuda para poner en funcionamiento un nodo Litd en un servidor Ubuntu. Estos scripts se han probado en Ubuntu 24.04. Hay tres secciones principales en la guía: preparación del servidor, configuración de bitcoind y configuración de litd. En cada una de estas secciones encontrará una descripción de lo que debe suceder, una lista de verificación a seguir, enlaces a archivos de ejemplo y, si lo prefiere, scripts bash que ejecutarán las listas de verificación por usted.
 
-Este repositorio se inspira en el repositorio [RUN LND](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
+Este repositorio se inspira en el repositorio [run-lnd](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
 
 Las versiones actuales de estas listas de verificación y scripts instalan...
 
