@@ -103,7 +103,7 @@ fi
 # Ejecutar el script de autenticación RPC
 RPC_OUTPUT=$(python3 ./rpcauth.py bitcoinrpc)
 RPC_AUTH=$(echo "$RPC_OUTPUT" | grep -oP '(?<=rpcauth=)\S+')
-RPC_PASSWORD=$(echo "$RPC_OUTPUT" | awk '/Your password:/ {getline; print $1}' | tr -d '[:space:]'))
+RPC_PASSWORD=$(echo "$RPC_OUTPUT" | awk '/Your password:/ {getline; print $1}' | tr -d '[:space:]')
 
 # Mostrar la contraseña al usuario
 echo "[+] La siguiente contraseña ha sido generada para su conexión RPC:"
