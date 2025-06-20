@@ -1,5 +1,7 @@
 # Ejecuta Litd
 
+![Alt text](litd.png "Ejecuta Litd")
+
 Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
 Fork del trabajo realizado por [@HannahMR](https://github.com/HannahMR/run-litd)
@@ -65,7 +67,7 @@ Cuando el script pida la clave SSH, debe generarla dentro de la terminal de su c
 
 ```$ ssh-keygen -t ed25519 -C "tu_email@ejemplo.com"```
 
-Le pedirá una ubicación para guardar las claves, solo presione Enter para que las guarde con el nombre y en el directorio por defecto: /home/tu_usuario/.ssh/id_ed25519
+Le pedirá una ubicación para guardar las claves, solo presione Enter para que las guarde con el nombre y en el directorio por defecto: /home/tu_usuario/.ssh/id_ed25519.
 Luego le pedirá de forma opcional una passphrase, que en entornos de test puede obviarse. Una vez completado mostrará algo similar a esto:
 
 ```
@@ -89,13 +91,15 @@ Luego debe copiar la clave ssh y pegarla en la terminal donde está ejecutando e
 
 ```$ cat id_ed25519.pub```
 
+
 Toda la línea completa que se muestra es lo que se debe copiar y pegar en el servidor. Ej: 
 
 ```ssh-ed25519 AAA1lZDI1NTEAAAIHOO7upjhjrW0a3obS47upjhjrW0a/LB usuario@mail.com```
 
-Es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y le transfiera la propiedad.
+Si originalmente clonó el repositorio con el usuario root, es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y luego transferir la propiedad.
 
 ```$ sudo mv /root/ejecuta-litd/ /home/ubuntu/ejecuta-litd/```
+
 ```$ sudo mv chown -R ubuntu:ubuntu /home/ubuntu/ejecuta-litd/```
 
 ## Configuración de Bitcoind
@@ -129,11 +133,13 @@ Si originalmente clonó este repositorio en /root, es posible que desee moverlo 
 No olvide hacer que los scripts sean ejecutables antes de intentar ejecutarlos.
 
 ```$ chmod +x bitcoind_setup.sh```
+
 ```$ chmod +x bitcoind_setup_binary.sh```
 
 El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./bitcoind_setup.sh```
+
 ```$ sudo ./bitcoind_setup_binary.sh```
 
 ## Configuración de Litd
@@ -161,8 +167,11 @@ No olvide hacerlos ejecutables antes de intentar ejecutarlos.
 Los scripts deben ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./litd_setup.sh```
+
 ```$ sudo ./litd_setup_binary.sh```
+
 ```$ sudo ./litd_setup2.sh```
+
 ```$ sudo ./litd_setup3.sh```
 
 Ahora a desarrollar! 
