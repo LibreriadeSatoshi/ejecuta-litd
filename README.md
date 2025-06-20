@@ -98,6 +98,7 @@ Toda la línea completa que se muestra es lo que se debe copiar. Ej:
 Si originalmente clonó el repositorio con el usuario root, es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y le transfiera la propiedad.
 
 ```$ sudo mv /root/ejecuta-litd/ /home/ubuntu/ejecuta-litd/```
+
 ```$ sudo mv chown -R ubuntu:ubuntu /home/ubuntu/ejecuta-litd/```
 
 ## Configuración de Bitcoind
@@ -131,11 +132,13 @@ Si originalmente clonó este repositorio en /root, es posible que desee moverlo 
 No olvide hacer que los scripts sean ejecutables antes de intentar ejecutarlos.
 
 ```$ chmod +x bitcoind_setup.sh```
+
 ```$ chmod +x bitcoind_setup_binary.sh```
 
 El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./bitcoind_setup.sh```
+
 ```$ sudo ./bitcoind_setup_binary.sh```
 
 ## Configuración de Litd
@@ -163,8 +166,11 @@ No olvide hacerlos ejecutables antes de intentar ejecutarlos.
 Los scripts deben ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./litd_setup.sh```
+
 ```$ sudo ./litd_setup_binary.sh```
+
 ```$ sudo ./litd_setup2.sh```
+
 ```$ sudo ./litd_setup3.sh```
 
 Ahora a desarrollar! 
