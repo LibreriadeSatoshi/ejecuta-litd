@@ -5,7 +5,7 @@
 Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
 Esta versión en español es un fork actualizado del trabajo de [@HannahMR](https://github.com/HannahMR/run-litd). Gracias por ser tan clara!
-Y se inspira inspira en el repositorio [Alex Bosworth](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
+Y se inspira en el repositorio [Alex Bosworth](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
 
 ¡Importante!: Estos ejemplos y scripts están diseñados para ayudar a los desarrolladores a configurar todo rápidamente para comenzar las pruebas y el desarrollo de aplicaciones. Por favor, no confíe en estos archivos para su entorno de producción.
 
