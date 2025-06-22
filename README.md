@@ -5,7 +5,7 @@
 Notas y scripts de ayuda para configurar y ejecutar un nodo Litd.
 
 Esta versión en español es un fork actualizado del trabajo de [@HannahMR](https://github.com/HannahMR/run-litd). Gracias por ser tan clara!
-Y se inspira inspira en el repositorio [Alex Bosworth](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
+Y se inspira en el repositorio [Alex Bosworth](https://github.com/alexbosworth/run-lnd/). Allí puede encontrar información más detallada sobre la configuración de un nodo Lightning.
 
 ¡Importante!: Estos ejemplos y scripts están diseñados para ayudar a los desarrolladores a configurar todo rápidamente para comenzar las pruebas y el desarrollo de aplicaciones. Por favor, no confíe en estos archivos para su entorno de producción.
 
@@ -135,7 +135,7 @@ No olvide hacer que los scripts sean ejecutables antes de intentar ejecutarlos.
 
 ```$ chmod +x bitcoind_setup_binary.sh```
 
-El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
+El script debe ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, (un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./bitcoind_setup.sh```
 
@@ -163,7 +163,7 @@ No olvide hacerlos ejecutables antes de intentar ejecutarlos.
 
 ```$ chmod +x litd_setup*```
 
-Los scripts deben ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual, un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
+Los scripts deben ejecutarse con sudo. No se preocupe, los repositorios, archivos, etc. serán propiedad de su usuario actual (un nuevo usuario llamado "ubuntu" si se utilizó el script server_setup).
 
 ```$ sudo ./litd_setup.sh```
 
