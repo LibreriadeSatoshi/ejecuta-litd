@@ -113,5 +113,5 @@ cat <<"EOF"
       |                |          |  | 
       `------------------------------' 
 
-Your server is ready for the next script!
+Tu servidor está listo para el próximo script!
 EOF
