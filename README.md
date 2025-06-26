@@ -54,6 +54,9 @@ Este paso se puede realizar de forma manual siguiendo el archivo de la lista de 
 
 Se le pedirá que pegue las claves SSH de su equipo a medida que se ejecuta el script.
 
+Ingresar a la carpeta ~/ejecutadel repositorio que se clonó.
+```$ cd ~/ejecuta-litd/scripts```
+
 No olvide hacerlo ejecutable antes de intentar ejecutarlo.
 
 ```$ chmod +x server_setup.sh```
@@ -97,9 +100,9 @@ Toda la línea completa que se muestra es lo que se debe copiar y pegar en el se
 
 Si originalmente clonó el repositorio con el usuario root, es posible que desee mover el repositorio ejecuta-litd al directorio de inicio del nuevo usuario de Ubuntu y luego transferir la propiedad.
 
-```$ sudo mv /root/ejecuta-litd/ /home/ubuntu/ejecuta-litd/```
+```$ sudo mv ~/NOMBRE_DE_USUARIO/ejecuta-litd/ /home/ubuntu/ejecuta-litd/```
 
-```$ sudo mv chown -R ubuntu:ubuntu /home/ubuntu/ejecuta-litd/```
+```$ sudo chown -R ubuntu:ubuntu /home/ubuntu/ejecuta-litd/```
 
 ## Configuración de Bitcoind
 
