@@ -4,8 +4,6 @@ Lista de Verificación para la Configuración del Servidor
   -- $ adduser ubuntu
 - [ ] Dar al usuario de Ubuntu acceso sudo agregando la siguiente línea al archivo /etc/sudoers debajo de la misma entrada para root. 
   -- ubuntu ALL=(ALL:ALL) ALL
-- [ ] Agregar contraseña de usuario $ sudo passwd 
-  -- $ sudo passwd
 - [ ] Cambiar al usuario de Ubuntu
   -- $ su ubuntu
 - [ ] Agregar las claves de su equipo al archivo de claves autorizadas 
