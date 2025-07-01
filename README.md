@@ -1,4 +1,5 @@
-# Ejecuta Litd
+# Litd de LND
+## Curso Autocustodia Lighntning Network: Tu Nodo Lightning, Tus Reglas
 
 ![Alt text](/img/autocustodia_ln.webp "Ejecuta Litd")
 
@@ -196,3 +197,6 @@ Para descagar el binario:
 ```sudo ./litd_setup3.sh```
 
 Ahora a desarrollar! 
+
+Autor: Federico Fox, Librería de Satoshi educator. 
+https://github.com/Foxtrot-Zulu
