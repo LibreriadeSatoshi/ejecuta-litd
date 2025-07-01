@@ -1,6 +1,6 @@
 # Ejecuta Litd
 
-![Alt text](litd.png "Ejecuta Litd")
+![Alt text](/img/autocustodia_ln.webp "Ejecuta Litd")
 
 La siguiente guía y los scripts de automatización fueron creados para el curso **Autocustodia LN: Tu Nodo Lightning, Tus Reglas**.
 Los mismos sirven de ayuda para correr un nodo Bitcoin Core y la suite de herramientas Lightning Terminal, que incluye un nodo LND, junto a las utilidades Loop, Pool y Faraday.
